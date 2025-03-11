@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--This nav is standard for all four pages-->
+    <nav class="navbar">
+        <div class="logo-container" onclick="window.location.href='homepage.html'">
+            <img src="images/IG.png" alt="IG Logo">
+            <div class="site-title">Welcome!</div>
+        </div>
+        <div class="nav-links">
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="contact-main">
+        <h2 id="contact-header">Contact Me! &#128513;</h2>
+        
+        <form id="contactForm">
+            <!-- Name Input -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+    
+            <!-- Email Input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+    
+            <!-- Message Textarea -->
+            <label for="message">Message:</label>
+            <textarea id="message" rows="10" placeholder="Type your message here..."></textarea>
+    
+            <!-- Submit Button -->
+            <button type="submit">Send Message</button>
+            
+            <!-- Error/Success Message Display -->
+            <p id="formMessage"></p>
+        </form>
+    </section>
+
+    <!--The app.js file contains the functions used here for the contact form-->  
+    <script src="app.js"></script>
+
+    <!--This footer is standard for all four pages-->
+    <footer>
+        <p>&copy; 2025 Isaac Gasparri. All Rights Reserved.</p>
+        <p>Github Profile: <a href="https://github.com/isaac-gasparri-27">isaac-gasparri-27</a></p>
+        <p>Contact through Email: <a href="mailto:isaac.gasparri26@houghton.edu?">isaac.gasparri26@houghton.edu</a></p>
+    </footer>
+</body>
+</html>

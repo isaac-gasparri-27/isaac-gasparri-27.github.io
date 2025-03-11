@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- This nav is standard for all four pages -->
+    <nav class="navbar">
+        <div class="logo-container" onclick="window.location.href='homepage.html'">
+            <img src="images/IG.png" alt="IG Logo">
+            <div class="site-title">Welcome!</div>
+        </div>
+        <div class="nav-links">
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header for the Projects page -->
+    <header class="project-header">
+        <h1>Projects</h1>
+        <p>Continue reading to view some of the projects I've been most proud to be a part of!</p>
+    </header>
+
+    <!-- Section for the first project -->
+    <section class="projects">
+        <div class="project">
+            <h2>Comparative Analysis of LLMs for Math Education</h2>
+            
+            <!-- Embed PDF using iframe -->
+            <iframe src="documents/Comparative_Analysis_of_LLMs_for_Math_Education.pdf" 
+                    width="100%" height="500px" 
+                    style="border: 1px solid #ccc;">
+            </iframe>
+
+            <h3>View the Github Repository <a href="https://github.com/isaac-gasparri-27/Comparative-Analysis-of-LLMs-for-Math-Education/" target="_blank" rel="noopener noreferrer">Here!</a></h3>
+            
+            <p class="project-description">
+                Abstract: Artificial Intelligence (AI) has emerged as a powerful 
+                tool in education, with Large Language Models (LLMs) offering 
+                significant opportunities to support student learning and educator 
+                instruction. This study investigates the comparative performance of 
+                four LLMs in solving math problems across three key domains: 
+                Algebra, Calculus, and Statistics. A data set of 30 questions, 
+                ranging in complexity and domain, was used to evaluate the accuracy, 
+                clarity, and valuability of each model's responses. Evaluations were 
+                conducted by a human evaluators familiar with the subjects.
+            </p>
+            <p class="project-description">
+                Results revealed that while all models performed similarly in terms 
+                of accuracy, the other two categories highlighted performance gaps. 
+                Meta AI emerged as the top performer, excelling in clarity and value, 
+                particularly in Calculus and Statistics. Julius AI demonstrated 
+                strength in solving complex word problems, whereas Gemini excelled at 
+                simpler problems. ChatGPT, however, consistently underperformed in all 
+                metrics, making it less reliable as a math resource. These findings offer 
+                insights into the capabilities of AI tools for math education, equipping 
+                educators and students with guidance on model selection based on the type 
+                and domain of the problem.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section for the second project -->
+    <section class="projects">
+        <div class="project">
+            <h2>Impact of Phosphorus Concentrations in Rivers on the NDVI Values
+                of the Surrounding Land Vegetation in Montana</h2>
+            
+            <!-- Embed PDF using iframe -->
+            <iframe src="documents/Final- Montana Research Paper.pdf" width="100%" height="500px" 
+                    style="border: 1px solid #ccc;">
+            </iframe>
+            
+            <p class="project-description">
+                Abstract: Areas with high levels of agriculture can lead to fertilizer runoff in the surrounding rivers, which
+                can cause high levels of phosphorus, a major component of fertilizer, in the water. In this study, the
+                concentrations of phosphorus in rivers were measured in various locations throughout the regions of Great
+                Falls and Missoula in Montana. Normalized Difference Vegetation Index, NDVI, was used to measure
+                photosynthetic productivity of the vegetation along the riverbanks at each location where samples were
+                taken using an UAV (unmanned aerial vehicle). The aim of this study was to determine whether or not
+                phosphorus concentrations in rivers have an effect on the NDVI values, which indicates plant health, on
+                the surrounding land vegetation. The data collected suggest phosphorus concentration in water had a weak
+                positive correlation with the NDVI values of the land vegetation within 5 m of the edge of the river,
+                although further research would have to take place in order to better investigate this finding as this study
+                only included a small sample size. 
+            </p>
+        </div>
+    </section>
+
+    <!-- Section for the third project -->
+    <section class="projects">
+        <div class="project">
+            <h2>Handwriting Recognition using TensorFlow</h2>
+            
+            <!-- Embed PDF using iframe -->
+            <iframe src="documents/Machine Learning Final Project.pdf" width="100%" height="500px" 
+                    style="border: 1px solid #ccc;">
+            </iframe>
+            
+            <p class="project-description">
+                Abstract: Handwriting recognition is an essential application of 
+                machine learning that enables the conversion of handwritten text 
+                into digital formats. This technology has significant implications 
+                for accessibility, education, historical document preservation, and 
+                digital data security. However, recognizing handwritten text presents 
+                challenges due to the high variability in handwriting styles, 
+                character spacing, and distortions. In this study, we implemented a 
+                Convolutional Neural Network (CNN) to recognize handwritten names 
+                from images. We utilized a dataset of over 400,000 images from 
+                Kaggle, which was preprocessed and reduced due to computational 
+                constraints. Despite extensive training over 50 epochs, our model 
+                achieved a low Character Accuracy Rate (CAR) of 6.77% and a high 
+                Character Error Rate (CER) of 10.063, highlighting significant 
+                challenges in effective model training and loss function 
+                optimization. The study identifies key limitations, 
+                including resource constraints, hyperparameter selection, and loss 
+                function inefficiencies, suggesting that improvements in 
+                computational resources and alternative loss functions may enhance 
+                performance. While our model did not perform as intended, this 
+                research provided valuable insights into the complexities of 
+                handwriting recognition and the practical difficulties of training 
+                deep learning models with limited resources.
+            </p>
+        </div>
+    </section>
+
+    <!-- This footer is standard for all four pages -->
+    <footer>
+        <p>&copy; 2025 Isaac Gasparri. All Rights Reserved.</p>
+        <p>Github Profile: <a href="https://github.com/isaac-gasparri-27">isaac-gasparri-27</a></p>
+        <p>Contact through Email: <a href="mailto:isaac.gasparri26@houghton.edu?">isaac.gasparri26@houghton.edu</a></p>
+    </footer>
+</body>
+</html>
