@@ -4,6 +4,8 @@ let highScore = localStorage.getItem('highScore') || 0;
 //home screen
 let homeScreen = true;
 
+let pipeInterval; // Store the interval ID for placing pipes
+
 //board
 let board;
 let boardWidth = 360;
@@ -67,15 +69,6 @@ window.onload = function() {
     context = board.getContext("2d");
 
     drawHomeScreen(); // Show the home screen initially
-    board = document.getElementById("board");
-    board.height = boardHeight;
-    board.width = boardWidth;
-    context = board.getContext("2d"); //used for drawing on the board
-
-    //Display high score
-    context.fillStyle = "white";
-    context.font = "20px sans-serif";
-    context.fillText("High Score: " + highScore, 5, 70);
 
     // Load images for each player
     birdImg1 = new Image();
@@ -90,8 +83,10 @@ window.onload = function() {
     bottomPipeImg = new Image();
     bottomPipeImg.src = "./bottompipe.png";
 
+    // Start the game loop
     requestAnimationFrame(update);
-    setInterval(placePipes, 1500);
+
+    // Add event listeners
     document.addEventListener("keydown", moveBird);
 };
 
@@ -269,10 +264,10 @@ function drawHomeScreen() {
 }
 
 function placePipes() {
-    if (gameOver) return;
+    if (bird1.gameOver && bird2.gameOver) return; // Don't add pipes if game is over
 
     let randomPipeY = pipeY - pipeHeight / 4 - Math.random() * (pipeHeight / 2);
-    let openingSpace = board.height / 4; // Space between pipes
+    let openingSpace = board.height / 4;
 
     let topPipe = {
         img: topPipeImg,
@@ -288,7 +283,7 @@ function placePipes() {
     let bottomPipe = {
         img: bottomPipeImg,
         x: pipeX,
-        y: randomPipeY + pipeHeight + openingSpace, 
+        y: randomPipeY + pipeHeight + openingSpace,
         width: pipeWidth,
         height: pipeHeight,
         passedByP1: false,
@@ -388,30 +383,37 @@ function detectCollision(a, b) {
 
 function restartGame() {
     console.log("Restarting game in 2 seconds...");
+    clearInterval(pipeInterval); // Stop placing pipes during restart
+
     setTimeout(() => {
-        // Reset both players' game over flags and scores
+        // Reset game state
         bird1.gameOver = false;
         bird2.gameOver = false;
-        bird1.hasPlayedDeathSound = false; // Reset death sound flag
-        bird2.hasPlayedDeathSound = false; // Reset death sound flag
+        bird1.hasPlayedDeathSound = false;
+        bird2.hasPlayedDeathSound = false;
         bird1.score = 0;
         bird2.score = 0;
 
-        // Reset pipes and other game variables
-        pipeArray = [];
-        velocityY = 0; // Reset bird jump velocity
-        score = 0; // Reset global score if used
-        gameOver = false; // Reset global gameOver state if used
+        // Reset pipes and game variables
+        pipeArray = []; // Clear all pipes
+        velocityY = 0;
+        score = 0;
+        gameOver = false;
 
         console.log("Game state reset. Restarting game loop...");
 
-        // Restart the game loop
+        // Restart the interval for placing pipes
+        pipeInterval = setInterval(placePipes, 1500);
+
+        // Restart game loop
         requestAnimationFrame(update);
-    }, 2000); // 2-second delay
+    }, 2000);
 }
 
 function startGame() {
     homeScreen = false;
+    pipeArray = []; // Clear any pipes that were added during the home screen
+    pipeInterval = setInterval(placePipes, 1500);
     requestAnimationFrame(update);
 }
 
